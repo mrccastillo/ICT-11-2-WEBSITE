@@ -49,8 +49,8 @@ function checkAuthState() {
       });
     } else {
       //When deployed to github
-      // window.location.href = "/ICT-11-2-WEBSITE/index.html";
-      window.location.href = "/index.html";
+      window.location.href = "/ICT-11-2-WEBSITE/index.html";
+//       window.location.href = "/index.html";
     }
   });
 }
