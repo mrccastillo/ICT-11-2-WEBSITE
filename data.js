@@ -28,7 +28,7 @@ function checkAuthState() {
         //When deployed to github
         window.location.href = "/ICT-11-2-WEBSITE/dashboard.html";
 
-//         window.location.href = "/dashboard.html";
+        window.location.href = "/dashboard.html";
       }
       load = false;
     }
