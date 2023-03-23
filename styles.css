@@ -41,10 +41,16 @@ nav {
     align-items: center;
 }
 
-.nav-links a {
+.nav-links a,
+.nav-links p {
     margin: 0 1rem;
     text-decoration: none;
     font-size: 1.2rem;
+    color: #f3fdf5;
+}
+
+.my-posts {
+    width: 5rem;
     color: #f3fdf5;
 }
 
@@ -85,10 +91,14 @@ nav {
     border-radius: 0.5rem;
     margin-bottom: 1rem;
     padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .info-announce-contents div h2,
-.info-announce-contents div p {
+.info-announce-contents div p,
+.info-announce-contents div span {
     text-align: center;
 }
 
@@ -145,12 +155,16 @@ button:hover {
     cursor: pointer;
 }
 
-.create-post {
+.create-post,
+#add-announcement {
     background-color: #f3fdf5;
+    margin-bottom: 1rem;
     width: 100%;
+    min-height: 4rem;
 }
 
-.create-post:hover {
+.create-post:hover,
+#add-announcement:hover {
     background-color: #eaf3eb;
     border: 1px solid #52b788;
     color: #000000;
@@ -161,6 +175,30 @@ button:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.nav-container {
+    display: flex;
+}
+
+.hamburgur-icon {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 2.6rem;
+    height: 2.6rem;
+    padding: 0.3rem;
+}
+
+.line {
+    background-color: rgb(243, 243, 243);
+    height: 0.2rem;
+    width: 100%;
+    border-radius: 0.5em;
+}
+
+.some-line-styles {
+    height: 0.23rem;
 }
 
 /* modals */
@@ -188,6 +226,11 @@ button:hover {
     justify-content: space-between;
 }
 
+#newsfeed {
+    text-align: center;
+    margin-bottom: 1.2rem;
+}
+
 textarea {
     border-color: white;
     width: 100%;
@@ -198,7 +241,7 @@ textarea {
 textarea:is(:focus, :valid) {
     border: none;
     outline: none;
-    border-color: #719ECE;
+    border-color: #719ece;
     box-shadow: 0 0 10px #99999957;
 }
 
@@ -225,6 +268,10 @@ textarea:is(:focus, :valid) {
 .add-post-container {
     justify-content: space-between;
     min-height: 20rem;
+}
+
+.post>p {
+    font-size: 20px;
 }
 
 label input,
@@ -258,10 +305,6 @@ label textarea {
     backdrop-filter: blur(4px);
     z-index: 100;
     transition: all 0.5s;
-}
-
-.hidden {
-    display: none;
 }
 
 .preloader {
@@ -324,6 +367,15 @@ label textarea {
     box-shadow: 0 0 20px #fff000;
 }
 
+.error {
+    color: red;
+    margin-top: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
 @keyframes animateC {
     0% {
         transform: rotate(0deg);
@@ -342,4 +394,97 @@ label textarea {
     100% {
         transform: rotate(405deg);
     }
+}
+
+@media (max-width: 1024px) {
+
+    .information-wrapper,
+    .announcement-wrapper {
+        display: none;
+    }
+
+    .information-wrapper,
+    .announcement-wrapper {
+        width: 100vw;
+    }
+
+    .hamburgur-icon {
+        display: flex;
+    }
+
+    nav {
+        flex-direction: row;
+        align-content: space-between;
+        z-index: 1000;
+    }
+
+    .collapsed-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        width: 100vw;
+        background-color: rgb(82, 183, 136);
+        top: 4rem;
+        left: 0;
+        z-index: 1000;
+        padding-bottom: 0.5rem;
+    }
+
+    .create-post,
+    #add-announcement {
+        background-color: #f3fdf5;
+        margin-bottom: 1rem;
+        width: 100%;
+        height: 6rem;
+    }
+
+    #nav-desktop {
+        display: none;
+    }
+
+    .hidden {
+        display: none;
+    }
+}
+
+@media (max-width: 475px) {
+    #dos {
+        padding: 1rem 0.5rem;
+    }
+
+    section,
+    .info-announce-contents {
+        border-radius: 0;
+    }
+
+    .aside-contents,
+    main {
+        padding: 0rem;
+        padding-top: 5rem;
+    }
+
+    .headers {
+        width: 95%;
+        align-self: center;
+    }
+}
+
+@media (max-width: 281px) {
+
+    .aside-contents,
+    main {
+        padding: 0rem;
+        padding-top: 4rem;
+    }
+
+    .aside-contents {
+        padding: 0rem;
+        padding-top: 6rem;
+    }
+
+    /* section,
+    .info-announce-contents {
+      border-radius: 0;
+    } */
 }
