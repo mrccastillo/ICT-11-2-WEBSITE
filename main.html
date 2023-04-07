@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content="Dos" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:image"
+      content="https://snplmntn.github.io/ICT-11-2-WEBSITE/img/logo.png"
+    />
+    <title>Dos</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Electrolize&family=Rubik+Mono+One&family=Saira+Condensed:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="img/logo.png" />
+  </head>
+
+  <body>
+    <nav>
+      <div class="logo-container">
+        <h2>D  O  S</h2>
+      </div>
+
+      <div class="nav-container">
+        <div class="nav-links" id="nav-desktop">
+          <a class="home" href="#home">Home</a>
+          <a class="my-posts" href="#my-posts">My Posts</a>
+          <button class="logout-link">Logout</button>
+        </div>
+        <div class="hamburgur-icon">
+          <div class="line some-line-styles"></div>
+          <div class="line"></div>
+          <div class="line some-line-styles"></div>
+        </div>
+      </div>
+
+      <div class="nav-links collapsed-nav hidden" id="nav-mobile">
+        <a id="nf" class="home" href="#home">Home</a>
+        <a class="my-posts mobile-my-posts" href="#my-posts">My Posts</a>
+        <p id="nav-post">Create Post</p>
+        <p id="nav-announce">Announcements</p>
+        <button class="logout-link">Logout</button>
+      </div>
+    </nav>
+    <div class="info-content-main-wrapper">
+      <div class="information-wrapper aside-contents">
+        <div class="headers" id="user-info">
+          <h2>
+            Hello
+            <span id="user-name"></span>!
+          </h2>
+        </div>
+        <div class="info-announce-contents post-anc">
+          <div id="abt-user">
+            <button id="add-announcement">Create New Announcement</button>
+            <button class="create-post">Create New Post</button>
+          </div>
+
+          <div class="container" id="tac-fb">
+            <a href="terms-and-condition.html" target="_blank" id="tac-link"
+              >Terms & Conditions</a
+            >
+            <p id="feedback">Send Feedback</p>
+          </div>
+        </div>
+      </div>
+      <main id="main">
+        <section class="dos-landing-page" id="dos">
+          <h2 id="newsfeed">Newsfeed</h2>
+          <p class="loading">Loading...</p>
+          <p class="load-more hidden">Load more posts...</p>
+          <!-- 
+          <div class="post">
+            <h2>TEST</h2>
+            <p>TEST</p>
+            <img src="img/logo.png" alt="">
+            <p>posted by test</p>
+            <span>1 sec ago</span>
+          </div> -->
+          <!-- appended post goes here -->
+        </section>
+      </main>
+      <div class="announcement-wrapper aside-contents">
+        <div class="headers">
+          <h2>Announcements!</h2>
+        </div>
+        <div class="info-announce-contents" id="new-announcements">
+          <!-- appended announcement divs goes here -->
+          <p class="loading">Loading...</p>
+        </div>
+      </div>
+    </div>
+    <form action="index.html" class="logout-modal hidden">
+      <input type="button" class="btn-close" value="&times;" />
+      <h2>Are you sure you want to Logout?</h2>
+      <button id="logout-button">Logout</button>
+    </form>
+
+    <div class="announce-container hidden">
+      <input type="button" class="btn-close" value="&times;" />
+      <h2>Create new announcement</h2>
+      <div class="add-announce-container">
+        <label>
+          <input
+            type="text"
+            id="title"
+            class="announce-input"
+            placeholder="Enter title..."
+          />
+        </label>
+
+        <label>
+          <input
+            type="text"
+            id="content"
+            class="announce-input"
+            placeholder="Enter Content..."
+          />
+        </label>
+        <div id="announcement-error" class="error"></div>
+        <button type="button" id="submit-btn">Submit</button>
+      </div>
+    </div>
+
+    <div class="upload-post-container hidden">
+      <input type="button" class="btn-close" value="&times;" />
+      <h2>Create new post</h2>
+      <div class="add-post-container">
+        <div class="container">
+          <label>
+            <textarea
+              name="post-subject"
+              type="text"
+              id="post-subject"
+              class="post-input"
+              placeholder="Enter subject..."
+            ></textarea>
+          </label>
+
+          <label>
+            <textarea
+              name="post-content"
+              type="text"
+              id="post-content"
+              class="post-input"
+              placeholder="Enter text..."
+            ></textarea>
+          </label>
+
+          <!-- <label>
+            <input type="file" id="post-img" name="img" accept="image/*">
+          </label> -->
+
+          <div id="post-error" class="error"></div>
+        </div>
+        <div class="container">
+          <div class="checkbox-container">
+            <label for="anonymous">Post Anonymously</label>
+            <input type="checkbox" id="anonymous" />
+          </div>
+          <button type="button" id="post-btn">Post</button>
+        </div>
+      </div>
+    </div>
+    <div class="overlay hidden"></div>
+
+    <div class="feedback-container hidden">
+      <input type="button" class="btn-close" value="&times;" />
+      <h2>Give us your Feedback</h2>
+      <div class="send-fb-container">
+      
+          <label>
+            <input
+              type="text"
+              id="fb-title"
+              class="fb-input"
+              placeholder="Subject"
+            />
+          </label>
+
+          <label>
+            <input
+              type="text"
+              id="fb-content"
+              class="fb-input"
+              placeholder="Enter Content..."
+            />
+          </label>
+        </p>
+
+        <div id="feedback-error" class="error"></div>
+        <a
+          href="feedbacks.html"
+          target="_blank"
+          class="hidden"
+          id="feedback-link"
+          >Feedbacks</a
+        >
+        <a
+        href="dos-message.html"
+        target="_blank"
+        class="hidden"
+        id="message-link"
+        >Send Message</a
+      >
+      <a
+      href="dos-cn.html"
+      target="_blank"
+      class="hidden"
+      id="change-name-link"
+      >Change Name</a
+    >
+        <div id="announcement-error" class="error"></div>
+        <button type="button" id="fb-submit">Submit</button>
+      </div>
+    </div>
+
+    <div class="survey-container hidden">
+      <input type="button" class="btn-close" value="&times;" />
+        <h2>Surbeytes</h2>
+        <div class="send-sv-container">
+
+        <p>Have you found it easy to navigate the Dos platform and find the features you need?</p>
+
+        <div class="radioboxes">
+          <input type="radio" id="yes1" name="no:1" value="Yes">
+          <label for="yes1">Yes</label>
+          <input type="radio" id="no1" name="no:1" value="No">
+          <label for="no1">No</label>
+        </div>
+
+        <p>
+          Do you feel that the privacy settings on Dos adequately protect your personal information?</p>
+
+        <div class="radioboxes">
+          <input type="radio" id="yes2" name="no:2" value="Yes">
+          <label for="yes2">Yes</label>
+          <input type="radio" id="no2" name="no:2" value="No">
+          <label for="no2">No</label>
+        </div>
+
+       <p>
+        Have you encountered any technical problems while using Dos, such as issues with posts and announcements not appearing properly or problems with the display of the platform?</p>
+
+       <div class="radioboxes">
+        <input type="radio" id="yes3" name="no:3" value="Yes">
+        <label for="yes3">Yes</label>
+        <input type="radio" id="no3" name="no:3" value="No">
+        <label for="no3">No</label>
+       </div>
+    
+
+    <p>
+      Are you satisfied with the overall performance of the website, in terms of speed and responsiveness?</p>
+
+    <div class="radioboxes">
+      <input type="radio" id="yes4" name="no:4" value="Yes">
+      <label for="yes4">Yes</label>
+      <input type="radio" id="no4" name="no:4" value="No">
+      <label for="no4">No</label>
+  </div>
+
+  <p>
+    Would you like to see any new features or improvements on the website in the future?</p>
+
+  <div class="radioboxes">
+    <input type="radio" id="yes5" name="no:5" value="Yes">
+    <label for="yes5">Yes</label>
+    <input type="radio" id="no5" name="no:5" value="No">
+    <label for="no5">No</label>
+  </div>
+        
+        <button type="button" id="sv-submit">Submit</button>
+        <div id="sv-error" class="error"></div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="preloader">
+        Loading
+        <span class="preloader-span"></span>
+      </div>
+    </footer>
+
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
